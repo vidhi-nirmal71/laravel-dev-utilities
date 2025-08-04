@@ -1,0 +1,152 @@
+<section class="upgrade-intro">
+    <h2>Laravel 9.52.15 to 10.47 Upgrade Documentation</h2>
+    <p>
+      This document outlines the detailed steps required to upgrade a Laravel project from version 9.52.15 to 10.47. The upgrade includes updates to the <code>composer.json</code> file, adjustments to key package versions, and modifications to <code>Handler.php</code> to ensure compatibility with Laravel 10.47.
+    </p>
+    <h3>Why Laravel 10.47 and Not Laravel 10.*?</h3>
+    <p>
+      We have specifically chosen Laravel 10.47 instead of using a wildcard version like <code>^10.0</code> because Laravel 10.47 is the most stable and up-to-date release in the Laravel 10 series at the time of upgrade. It includes all relevant bug fixes, security patches, and performance enhancements.
+    </p>
+    <p>
+      Laravel 10 is an LTS (Long-Term Support) release, which means it will receive bug fixes for 2 years and security updates for 3 years. Choosing the latest patch within an LTS release ensures the most secure and optimized version of the framework for long-term production use.
+    </p>
+  </section>
+  
+  <section>
+    <h3>1. Backup the Project and Database</h3>
+    <ul>
+      <li><strong>Backup code:</strong> <code>cp -r laravel-adminpanel laravel-adminpanel-backup</code></li>
+      <li><strong>Or use Git:</strong>
+        <pre><code>git add .
+  git commit -m "Backup before Laravel 9 upgrade"
+  git tag pre-laravel-9
+  git push origin dev-upgrade-9-to-10 --tags</code></pre>
+      </li>
+      <li><strong>Backup the database:</strong> <code>mysqldump -u youruser -p yourdatabase > db_backup.sql</code></li>
+    </ul>
+  </section>
+  
+  <section>
+    <h3>2. Update Laravel Version in composer.json</h3>
+    <p>Edit <code>composer.json</code> and set:</p>
+    <pre><code>"laravel/framework": "^10.47"</code></pre>
+    <p>Also verify compatibility of Laravel-specific packages.</p>
+  </section>
+  
+  <section>
+    <h3>3. Try to Update Composer Packages</h3>
+    <pre><code>composer update</code></pre>
+    <p>If memory issues occur:</p>
+    <pre><code>COMPOSER_MEMORY_LIMIT=-1 composer update</code></pre>
+  </section>
+  
+  <section>
+    <h3>4. Fix Package Compatibility Issues</h3>
+    <ul>
+      <li><strong>Problem:</strong> Package X requires Laravel ^9.52.15</li>
+      <li><strong>Solution:</strong> <code>composer require vendor/package:^X.Y</code></li>
+      <li><strong>Other issues:</strong> Check GitHub for Laravel 10 support, use alternatives, or temporarily remove the package.</li>
+    </ul>
+  </section>
+  
+  <section>
+    <h3>5. Clear and Optimize Laravel Setup</h3>
+    <pre><code>php artisan config:clear
+  php artisan route:clear
+  php artisan view:clear
+  php artisan cache:clear
+  composer dump-autoload
+  php artisan optimize</code></pre>
+  </section>
+  
+  <section>
+    <h3>6. Handle Code Changes (Handler.php)</h3>
+    <ul>
+      <li>Adjust method signatures</li>
+      <li>Remove deprecated methods</li>
+      <li>Add missing imports</li>
+    </ul>
+  </section>
+  
+  <section>
+    <h3>7. Check Project Functionality</h3>
+    <pre><code>php artisan serve</code></pre>
+    <p>Verify key areas like login, forms, dashboard, and assets.</p>
+  </section>
+  
+  <section>
+    <h3>8. Run Migrations and Seed</h3>
+    <pre><code>php artisan migrate
+  php artisan db:seed</code></pre>
+  </section>
+  
+  <section>
+    <h3>9. Run Tests</h3>
+    <pre><code>php artisan test</code></pre>
+  </section>
+  
+  <section>
+    <h3>10. Final Cleanup</h3>
+    <pre><code>php artisan config:cache
+  php artisan route:cache
+  php artisan view:cache
+  vendor/bin/php-cs-fixer fix
+  
+  # If skipping GrumPHP
+  
+  git commit --no-verify -m "Laravel upgraded to 10.47"</code></pre>
+  </section>
+  
+  <section>
+    <h3>Summary of Commands</h3>
+    <pre><code># Backup
+  cp -r laravel-adminpanel laravel-adminpanel-backup
+  mysqldump -u root -p dbname > backup.sql
+  
+  # Update
+  composer update
+  COMPOSER_MEMORY_LIMIT=-1 composer update
+  
+  # Fix packages
+  composer require vendor/package:^version
+  
+  # Clear + optimize
+  php artisan config:clear
+  php artisan optimize
+  php artisan migrate
+  php artisan serve
+  php artisan test
+  
+  # Commit
+  git commit -am "Upgraded Laravel to 10.47"
+  git push</code></pre>
+  </section>
+  
+  <section>
+    <h3>Composer Package Changes</h3>
+    <h4>1. Updated Packages</h4>
+    <ul>
+      <li><strong>PHP Version:</strong> ^7.4 → ^8.1<br><em>Laravel 10 requires PHP 8.1+, offering better performance, enums, and type safety.</em></li>
+      <li><strong>arcanedev/log-viewer:</strong> ^9.0 → ^10.0</li>
+      <li><strong>knuckleswtf/scribe:</strong> ^3.22 → ^4.0</li>
+      <li><strong>laravel/framework:</strong> ^9.52.15 → ^10.47</li>
+      <li><strong>laravel/passport:</strong> ^10.0 → ^11.0</li>
+      <li><strong>laravel/ui:</strong> ^3.2 → ^4.0</li>
+      <li><strong>symfony/console:</strong> ^6.0.9 → ^6.2</li>
+      <li><strong>yajra/laravel-datatables-oracle:</strong> ^9.10 → ^10.0</li>
+    </ul>
+  
+    <h4>2. Removed Packages</h4>
+    <ul>
+      <li><strong>albertcht/invisible-recaptcha:</strong> Removed (unmaintained)</li>
+      <li><strong>fideloper/proxy:</strong> Removed (Laravel 10 handles proxies natively)</li>
+    </ul>
+  </section>
+  
+  <section>
+    <h3>Conclusion</h3>
+    <p>
+      This upgrade ensures compatibility with Laravel 10.47, modernizes your tech stack, improves performance, and ensures long-term support. By locking to the final stable Laravel 10 version, you gain a secure and consistent development environment.
+    </p>
+  </section>
+  

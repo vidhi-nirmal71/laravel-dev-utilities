@@ -1,0 +1,119 @@
+<!-- <h2 class="text-center mb-4">Laravel 10.47 to 11 Upgrade Documentation</h2> -->
+<p class="lead mb-5">This document outlines the detailed steps required to upgrade a Laravel project from version 10.47 to 11.</p>
+
+<h4>1. Backup the Project and Database</h4>
+<pre><code>cp -r laravel-adminpanel laravel-adminpanel-backup
+
+# OR use Git
+git add .
+git commit -m "Backup before Laravel 11 upgrade"
+git tag pre-laravel-11
+git push origin dev-upgrade-10-to-11 --tags
+
+# Back up the database
+mysqldump -u youruser -p yourdatabase > db_backup.sql
+</code></pre>
+
+<h4>2. Update Laravel Version in composer.json</h4>
+<p>Edit <code>composer.json</code>: <code>"laravel/framework": "^11.0"</code></p>
+<pre><code>
+composer update
+COMPOSER_MEMORY_LIMIT=-1 composer update
+</code></pre>
+
+<h4>3. Fix Package Compatibility Issues</h4>
+<ul>
+  <li><strong>Problem:</strong> Package requires laravel/framework ^10.47</li>
+  <li><strong>Solution:</strong> <code>composer require vendor/package:^X.Y</code></li>
+</ul>
+
+<h4>4. Clear and Optimize Laravel Setup</h4>
+<pre><code>
+php artisan config:clear
+php artisan route:clear
+php artisan view:clear
+php artisan cache:clear
+composer dump-autoload
+php artisan optimize
+</code></pre>
+
+<h4>5. Handle Code Changes (Handler.php)</h4>
+<ul>
+  <li>Adjust method signatures</li>
+  <li>Remove deprecated methods</li>
+  <li>Add missing imports</li>
+</ul>
+
+<h4>6. Check Project Functionality</h4>
+<p>Ensure:</p>
+<ul>
+  <li>Pages load correctly</li>
+  <li>JS and CSS are working</li>
+  <li>No console or network errors</li>
+</ul>
+
+<h4>7. Run Migrations and Test Data</h4>
+<pre><code>
+php artisan migrate
+php artisan db:seed
+</code></pre>
+
+<h4>8. Run Tests</h4>
+<pre><code>php artisan test</code></pre>
+
+<h4>9. Final Cleanup</h4>
+<pre><code>
+php artisan config:cache
+php artisan route:cache
+php artisan view:cache
+</code></pre>
+
+<h4>10. Summary of Commands</h4>
+<pre><code>
+# Backup
+cp -r laravel-adminpanel laravel-adminpanel-backup
+mysqldump -u root -p dbname > backup.sql
+
+# Update
+composer update
+COMPOSER_MEMORY_LIMIT=-1 composer update
+
+# Fix packages
+composer require vendor/package:^version
+
+# Clear + optimize
+php artisan config:clear
+php artisan optimize
+php artisan migrate
+php artisan serve
+php artisan test
+
+# Commit
+git commit -am "Upgraded Laravel to 11.00"
+git push
+</code></pre>
+
+<h4>Composer Package Changes</h4>
+<h6>✅ Updated Packages:</h6>
+<ul>
+  <li>PHP: ^8.2</li>
+  <li>laravel/framework: ^11.00</li>
+  <li>laravel/passport: ^13.1</li>
+  <li>spatie/laravel-permission: ^6.0</li>
+  <li>knuckleswtf/scribe: ^4.0</li>
+  <li>phpro/grumphp: ^2.0</li>
+  <li>yajra/laravel-datatables-oracle: ^11.0</li>
+</ul>
+
+<h6>❌ Removed Packages:</h6>
+<ul>
+  <li>altek/accountant</li>
+  <li>altek/eventually</li>
+  <li>arcanedev/log-viewer</li>
+  <li>davejamesmiller/laravel-breadcrumbs</li>
+  <li>codedungeon/phpunit-result-printer</li>
+  <li>nunomaduro/collision</li>
+  <li>phpunit/phpunit</li>
+</ul>
+
+<p class="mt-5">This upgrade ensures your Laravel app is <strong>stable, secure, and aligned</strong> with modern PHP practices.</p>
