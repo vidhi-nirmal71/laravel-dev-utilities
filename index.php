@@ -223,7 +223,7 @@
 
     <section class="site-section blog-section mb-3" id="migrations">
       <div class="container">
-        <h2 class="text-4xl font-bold text-center mb-12 p-5" data-aos="fade-down">Latest Blog Posts</h2>
+        <h2 class="text-4xl font-bold text-center mb-12 p-5" data-aos="fade-down">Our Migrations Hub</h2>
         <div class="row">
           <div class="col-md-6 col-lg-4 mb-4">
             <div class="blog-card h-100 shadow rounded overflow-hidden">

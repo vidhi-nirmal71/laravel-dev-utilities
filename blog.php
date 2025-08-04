@@ -3,29 +3,29 @@ $post = isset($_GET['post']) ? basename($_GET['post']) : '';
 $filePath = __DIR__ . '/posts/' . $post . '.html';
 
 $blogTitles = [
-    'doc_10_11' => [
+    'blog_10_11' => [
         'title' => 'Why Upgrading from Laravel 10 to 11 Is Critical in 2025',
         'subtitle' => 'Stay ahead with this Laravel 10 → 11 upgrade strategy'
     ],
-    'doc_9_11' => [
+    'blog_9_11' => [
         'title' => 'Laravel 9 to 11: The Upgrade That Pays Off',
         'subtitle' => 'Modernize your app by jumping from Laravel 9.52 to 11'
     ],
-    'doc_8_11' => [
+    'blog_8_11' => [
         'title' => 'Still on Laravel 8? Here’s Why Version 11 Is a Must',
         'subtitle' => 'Upgrade today for speed, security, and developer happiness'
     ],
-    'doc_7_11' => [
+    'blog_7_11' => [
         'title' => 'Laravel 7 to 11: What You’re Risking by Not Upgrading',
         'subtitle' => 'A blog guide on bridging 4 major versions in 2025'
     ],
-    'doc_6_11' => [
+    'blog_6_11' => [
         'title' => 'Laravel 6 to 11: Upgrade Guide + Real Risks You’re Ignoring',
         'subtitle' => 'You’re not just outdated—you’re exposed. Here’s what to do.'
     ],
 ];
 
-$blogTitle = $blogTitles[$post]['title'] ?? 'Laravel Blog';
+$blogTitle = $blogTitles[$post]['title'] ?? 'Laravel Migration';
 $blogSubtitle = $blogTitles[$post]['subtitle'] ?? 'Explore actionable Laravel upgrade insights';
 
 if ($post && file_exists($filePath)) {
@@ -86,8 +86,7 @@ if ($post && file_exists($filePath)) {
 
   <div class="site-wrap">
     <div class="site-blocks-cover inner-page-cover" style="background-image: url('images/blog-cover.jpg'); padding: 120px 0;" data-aos="fade">
-      <div class="container text-center">
-        <!-- <span class="badge badge-dark mb-3" style="font-size: 1rem; padding: 0.5em 1em;">Laravel Blog</span> -->
+      <div class="text-center mt-5">
         <h1 class="mb-3 font-weight-bold"><?php echo htmlspecialchars($blogTitle); ?></h1>
         <p class="lead"><?php echo htmlspecialchars($blogSubtitle); ?></p>
       </div>
