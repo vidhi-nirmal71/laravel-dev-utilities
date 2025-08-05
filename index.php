@@ -4,31 +4,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="author" content="Untree.co">
-  <link rel="shortcut icon" href="https://www.itpathsolutions.com/wp-content/uploads/2020/01/cropped-favicon-32x32.png">
+  <meta name="author" content="itpathsolutions.com">
+  <link rel="shortcut icon" href="cropped-favicon-32x32.png">
   <meta name="robots" content="noindex, nofollow">
-
   <meta name="description" content="" />
   <meta name="keywords" content="" />
-
   <link href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700,900" rel="stylesheet">
   <link rel="stylesheet" href="fonts/icomoon/style.css">
-
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/jquery-ui.css">
   <link rel="stylesheet" href="css/owl.carousel.min.css">
   <link rel="stylesheet" href="css/owl.theme.default.min.css">
-
   <link rel="stylesheet" href="css/jquery.fancybox.min.css">
-
   <link rel="stylesheet" href="css/bootstrap-datepicker.css">
-
   <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
-
   <link rel="stylesheet" href="css/aos.css">
-
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/styles.css">
   <title>IT Path Solutions - Laravel Packages</title>
 
    <!-- Google Analytics (gtag.js) -->
@@ -73,15 +64,6 @@
 
 
   <div class="site-wrap">
-    <div class="site-mobile-menu site-navbar-target">
-      <div class="site-mobile-menu-header">
-        <div class="site-mobile-menu-close mt-3">
-          <span class="icon-close2 js-menu-toggle"></span>
-        </div>
-      </div>
-      <div class="site-mobile-menu-body"></div>
-    </div>
-
     <?php include 'header.php'; ?>
 
     <div class="particlehead"></div>
@@ -100,32 +82,32 @@
       </div>
     </div>
 
-    <section class="site-section" id="packages">
-      <div class="container">
-        <h2 class="text-4xl font-bold text-center mb-12 p-5" data-aos="fade-down">Our Laravel Packages</h2>
+    <div class="site-section" id="packages">
+      <div class="container px-3 px-md-4">
+        <h2 class="text-4xl font-bold text-center mb-12 p-5" style="font-size: 37px !important;" data-aos="fade-down">Our Laravel Packages</h2>
         <div class="row">
-          <div class="col-lg-12 mb-5" data-aos="fade-right">
-          <div class="d-flex flex-lg-row flex-column align-items-center box-with-humber bg-white p-5 shadow rounded-2">
-            <img src="images/phpinfo.jpg" alt="PHP Info" class="package-img me-lg-5 mb-4 mb-lg-0" style="max-width: 200px;" data-aos="fade-right" data-aos-delay="100"/>
+          <div class="col-12 mb-4" data-aos="fade-right">
+            <div class="d-flex flex-lg-row flex-column align-items-center gap-3 box-with-humber bg-white p-4 p-md-5 shadow rounded-2">
+              <img src="images/phpinfo.jpg" alt="PHP Info" class="img-fluid package-img" style="max-width: 200px;" data-aos="fade-right" data-aos-delay="100"/>
               <div class="project-content text-lg-start w-100" data-aos="fade-left" data-aos-delay="300">
                 <div class="project-type text-muted mb-2">System</div>
                 <h2 class="text-3xl text-primary mb-3">Phpinfo</h2>
                 <p class="text-gray-600 mb-3">Offers a clear overview of the PHP runtime environment, including configuration settings, installed extensions, and module information.</p>
-                <ul class="list-unstyled ul-check primary mb-4">
+                <ul class="list-unstyled ul-check primary mb-4 text-start">
                   <li>Provides detailed insights into your PHP environment in a developer-friendly format.</li>
                   <li>Displays core PHP information, extensions, directives, and modules.</li>
                   <li>Powerful tool for debugging and performance optimization.</li>
                 </ul>
-                <div class="btn-wrapper d-flex justify-content-lg-end">
+                <div class="btn-wrapper d-flex justify-content-lg-end justify-content-center">
                   <a href="https://packagist.org/packages/itpathsolutions/phpinfo" class="btn btn-primary" target="_blank">View Package</a>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-12 mb-5" data-aos="fade-left">
-            <div class="d-flex flex-lg-row-reverse flex-column align-items-center box-with-humber bg-white p-5 shadow rounded-2">
-              <img src="images/mysqlinfo.jpg" alt="MySQL Info" class="package-img ms-lg-5 mb-4 mb-lg-0" style="max-width: 200px;" data-aos="fade-right" data-aos-delay="100"/>
+          <div class="col-12 mb-4" data-aos="fade-right">
+            <div class="d-flex flex-lg-row-reverse flex-column align-items-center gap-3 box-with-humber bg-white p-4 p-md-5 shadow rounded-2">
+              <img src="images/mysqlinfo.jpg" alt="MySQL Info" class="img-fluid package-img" style="max-width: 200px;" data-aos="fade-right" data-aos-delay="100"/>
               <div class="project-content text-lg-start w-100" data-aos="fade-left" data-aos-delay="300">
                 <div class="project-type text-muted mb-2">Database</div>
                 <h2 class="text-3xl text-primary mb-3">Mysqlinfo</h2>
@@ -142,9 +124,9 @@
             </div>
           </div>
 
-          <div class="col-lg-12 mb-5" data-aos="fade-right">
-            <div class="d-flex flex-lg-row flex-column align-items-center box-with-humber bg-white p-5 shadow rounded-2">
-              <img src="images/authinfo.jpg" alt="Auth Info" class="package-img me-lg-5 mb-4 mb-lg-0" style="max-width: 200px;" data-aos="fade-right" data-aos-delay="100"/>
+          <div class="col-12 mb-4" data-aos="fade-right">
+            <div class="d-flex flex-lg-row flex-column align-items-center gap-3 box-with-humber bg-white p-4 p-md-5 shadow rounded-2">
+              <img src="images/authinfo.jpg" alt="Auth Info" class="img-fluid package-img" style="max-width: 200px;" data-aos="fade-right" data-aos-delay="100"/>
               <div class="project-content text-lg-start w-100" data-aos="fade-left" data-aos-delay="300">
                 <div class="project-type text-muted mb-2">Authentication</div>
                 <h2 class="text-3xl text-primary mb-3">AuthInfo</h2>
@@ -161,9 +143,9 @@
             </div>
           </div>
 
-          <div class="col-lg-12 mb-5" data-aos="fade-left">
-            <div class="d-flex flex-lg-row-reverse flex-column align-items-center box-with-humber bg-white p-5 shadow rounded-2">
-              <img src="images/chatbot.jpg" alt="Chatbot" class="package-img ms-lg-5 mb-4 mb-lg-0" style="max-width: 200px;" data-aos="fade-right" data-aos-delay="100"/>
+          <div class="col-12 mb-4" data-aos="fade-right">
+            <div class="d-flex flex-lg-row-reverse flex-column align-items-center gap-3 box-with-humber bg-white p-4 p-md-5 shadow rounded-2">
+              <img src="images/chatbot.jpg" alt="Chatbot" class="img-fluid package-img" style="max-width: 200px;" data-aos="fade-right" data-aos-delay="100"/>
               <div class="project-content text-lg-start w-100" data-aos="fade-left" data-aos-delay="300">
                 <div class="project-type text-muted mb-2">AI / Chat</div>
                 <h2 class="text-3xl text-primary mb-3">Chatbot</h2>
@@ -180,9 +162,9 @@
             </div>
           </div>
 
-          <div class="col-lg-12 mb-5" data-aos="fade-right">
-            <div class="d-flex flex-lg-row flex-column align-items-center box-with-humber bg-white p-5 shadow rounded-2">
-              <img src="images/redisinfo.jpg" alt="RedisInfo" class="package-img me-lg-5 mb-4 mb-lg-0" style="max-width: 200px;" data-aos="fade-right" data-aos-delay="100"/>
+          <div class="col-12 mb-4" data-aos="fade-right">
+            <div class="d-flex flex-lg-row flex-column align-items-center gap-3 box-with-humber bg-white p-4 p-md-5 shadow rounded-2">
+              <img src="images/redisinfo.jpg" alt="RedisInfo" class="img-fluid package-img" style="max-width: 200px;" data-aos="fade-right" data-aos-delay="100"/>
               <div class="project-content text-lg-start w-100" data-aos="fade-left" data-aos-delay="300">
                 <div class="project-type text-muted mb-2">Caching</div>
                 <h2 class="text-3xl text-primary mb-3">Redis Info</h2>
@@ -199,9 +181,9 @@
             </div>
           </div>
 
-          <div class="col-lg-12 mb-5" data-aos="fade-left">
-            <div class="d-flex flex-lg-row-reverse flex-column align-items-center box-with-humber bg-white p-5 shadow rounded-2">
-              <img src="images/rolewise.jpg" alt="Role-wise Session Manager" class="package-img ms-lg-5 mb-4 mb-lg-0" style="max-width: 200px;" data-aos="fade-right" data-aos-delay="100"/>
+          <div class="col-12 mb-4" data-aos="fade-right">
+            <div class="d-flex flex-lg-row-reverse flex-column align-items-center gap-3 box-with-humber bg-white p-4 p-md-5 shadow rounded-2">
+              <img src="images/rolewise.jpg" alt="Role-wise Session Manager" class="img-fluid package-img" style="max-width: 200px;" data-aos="fade-right" data-aos-delay="100"/>
               <div class="project-content text-lg-start w-100" data-aos="fade-left" data-aos-delay="300">
                 <div class="project-type text-muted mb-2">Security</div>
                 <h2 class="text-3xl text-primary mb-3">Role-wise Session Manager</h2>
@@ -219,9 +201,9 @@
           </div>
         </div>
       </div>
-    </section>
+    </div>
 
-    <section class="site-section blog-section mb-3" id="migrations">
+    <div class="site-section blog-section mb-3" id="migrations">
       <div class="container">
         <h2 class="text-4xl font-bold text-center mb-12 p-5" data-aos="fade-down">Our Migrations Hub</h2>
         <div class="row">
@@ -277,10 +259,9 @@
           </div>
         </div>
       </div>
-    </section>
+    </div>
 
     <?php include 'footer.php'; ?>
-
   </div>
 
     <script src="js/jquery-3.3.1.min.js"></script>
@@ -290,7 +271,11 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/jquery.countdown.min.js"></script>
+    <script src="js/bootstrap-datepicker.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
     <script src="js/aos.js"></script>
+    <script src="js/jquery.fancybox.min.js"></script>
     <script src="js/jarallax.min.js"></script>
     <script src="js/jarallax-element.min.js"></script>
     <script src="js/lozad.min.js"></script>
@@ -313,7 +298,7 @@
         showCursor: true
       });
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
     <script src="js/main.js"></script>
     <!-- AOS Scripts -->
     <script>
@@ -324,40 +309,40 @@
       });
 
       // Initialize Swiper for blog posts
-      var swiper = new Swiper(".mySwiper", {
-          loop: true,
-          speed: 1000,
-          autoplay: {
-            delay: 2000,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true,
-          },
-          navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-          },
-          pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-          },
-          slidesPerView: "auto",
-          centeredSlides: false,
-          spaceBetween: 30,
-          breakpoints: {
-            0: {
-              spaceBetween: 15,
-            },
-            768: {
-              spaceBetween: 20,
-            },
-            1024: {
-              spaceBetween: 20,
-            },
-            1200: {
-              spaceBetween: 30,
-            }
-          }
-      });
+      // var swiper = new Swiper(".mySwiper", {
+      //     loop: true,
+      //     speed: 1000,
+      //     autoplay: {
+      //       delay: 2000,
+      //       disableOnInteraction: false,
+      //       pauseOnMouseEnter: true,
+      //     },
+      //     navigation: {
+      //       nextEl: ".swiper-button-next",
+      //       prevEl: ".swiper-button-prev",
+      //     },
+      //     pagination: {
+      //       el: ".swiper-pagination",
+      //       clickable: true,
+      //     },
+      //     slidesPerView: "auto",
+      //     centeredSlides: false,
+      //     spaceBetween: 30,
+      //     breakpoints: {
+      //       0: {
+      //         spaceBetween: 15,
+      //       },
+      //       768: {
+      //         spaceBetween: 20,
+      //       },
+      //       1024: {
+      //         spaceBetween: 20,
+      //       },
+      //       1200: {
+      //         spaceBetween: 30,
+      //       }
+      //     }
+      // });
     </script>
   </body>
   </html>

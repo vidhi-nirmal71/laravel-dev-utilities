@@ -4,9 +4,7 @@ site.document = $(document);
 site.Width = site.window.width();
 site.Height = site.window.height();
 
-var Background = function() {
-
-};
+var Background = function() {};
 
 Background.headparticle = function() {   
 
@@ -46,45 +44,41 @@ Background.headparticle = function() {
    // model
    var loader = new THREE.OBJLoader( manager );
    loader.load( 'object/scale_15.obj', function ( object ) {
-
       object.traverse( function ( child ) {
-
          if ( child instanceof THREE.Mesh ) {
-
             // child.material.map = texture;
-
             var scale = 8;
-
             $(child.geometry.vertices).each(function() {
                p_geom.vertices.push(new THREE.Vector3(this.x * scale, this.y * scale, this.z * scale));
             })
          }
       });
-
-      Background.scene.add(p)
+      Background.scene.add(p);
    });
 
-   p = new THREE.ParticleSystem(
-      p_geom,
-      p_material
-      );
+   p = new THREE.ParticleSystem(p_geom, p_material);
 
    Background.renderer = new THREE.WebGLRenderer({ alpha: true });
+   Background.renderer.domElement.style.width = "100%";
+   Background.renderer.domElement.style.height = "100%";
+   Background.renderer.domElement.style.display = "block";
    Background.renderer.setSize( site.Width, site.Height );
    Background.renderer.setClearColor(0x000000, 0);
-
+   $('.particlehead canvas').remove();
    $('.particlehead').append(Background.renderer.domElement);
    $('.particlehead').on('mousemove', onDocumentMouseMove);
    site.window.on('resize', onWindowResize);
 
    function onWindowResize() {
+      site.Width = site.window.width();
+      site.Height = site.window.height();
+
       windowHalfX = site.Width / 2;
       windowHalfY = site.Height / 2;
       //console.log(windowHalfX);
 
       Background.camera.aspect = site.Width / site.Height;
       Background.camera.updateProjectionMatrix();
-
       Background.renderer.setSize( site.Width, site.Height );
    }
 
@@ -94,26 +88,19 @@ Background.headparticle = function() {
    }
 
    Background.animate = function() { 
-
       Background.ticker = TweenMax.ticker;
       Background.ticker.addEventListener("tick", Background.animate);
-
       render();
    }
 
    function render() {
       Background.camera.position.x += ( (mouseX * .5) - Background.camera.position.x ) * .05;
       Background.camera.position.y += ( -(mouseY * .5) - Background.camera.position.y ) * .05;
-
       Background.camera.lookAt( Background.scene.position );
-
       Background.renderer.render( Background.scene, Background.camera );
    }
 
    render();
-
    Background.animate();
 };
-
-
 Background.headparticle();

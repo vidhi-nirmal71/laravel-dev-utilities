@@ -22,9 +22,7 @@ jQuery(document).ready(function($) {
 			$this.clone().attr('class', 'site-nav-wrap').appendTo('.site-mobile-menu-body');
 		});
 
-
 		setTimeout(function() {
-
 			var counter = 0;
 			$('.site-mobile-menu .has-children').each(function(){
 				var $this = $(this);
@@ -40,9 +38,7 @@ jQuery(document).ready(function($) {
 					'class' : 'collapse',
 					'id' : 'collapseItem' + counter,
 				});
-
 				counter++;
-
 			});
 
 		}, 1000);
@@ -111,7 +107,6 @@ jQuery(document).ready(function($) {
 	};
 	// sitePlusMinus();
 
-
 	var siteSliderRange = function() {
 		$( "#slider-range" ).slider({
 			range: true,
@@ -126,8 +121,6 @@ jQuery(document).ready(function($) {
 			" - $" + $( "#slider-range" ).slider( "values", 1 ) );
 	};
 	// siteSliderRange();
-
-
 	
 	var siteCarousel = function () {
 		if ( $('.nonloop-block-13').length > 0 ) {
@@ -190,7 +183,6 @@ jQuery(document).ready(function($) {
 	siteStellar();
 
 	var siteCountDown = function() {
-
 		$('#date-countdown').countdown('2020/10/10', function(event) {
 			var $this = $(this).html(event.strftime(''
 				+ '<span class="countdown-block"><span class="label">%w</span> weeks </span>'
@@ -199,16 +191,13 @@ jQuery(document).ready(function($) {
 				+ '<span class="countdown-block"><span class="label">%M</span> min </span>'
 				+ '<span class="countdown-block"><span class="label">%S</span> sec</span>'));
 		});
-
 	};
 	siteCountDown();
 
 	var siteDatePicker = function() {
-
 		if ( $('.datepicker').length > 0 ) {
 			$('.datepicker').datepicker();
 		}
-
 	};
 	siteDatePicker();
 
@@ -222,35 +211,25 @@ jQuery(document).ready(function($) {
 		var navToggler = $('.site-menu-toggle');
 		$("body").on("click", ".main-menu li a[href^='#'], .smoothscroll[href^='#'], .site-mobile-menu .site-nav-wrap li a", function(e) {
 			e.preventDefault();
-
 			var hash = this.hash;
-
 			$('html, body').animate({
 				'scrollTop': $(hash).offset().top
 			}, 600, 'easeInOutCirc', function(){
 				window.location.hash = hash;
 			});
-
 		});
 	};
+
 	OnePageNavigation();
-
 	var siteScroll = function() {
-
-
-
 		$(window).scroll(function() {
-
 			var st = $(this).scrollTop();
-
 			if (st > 100) {
 				$('.js-sticky-header').addClass('shrink');
 			} else {
 				$('.js-sticky-header').removeClass('shrink');
 			}
-
-		}) 
-
+		})
 	};
 	siteScroll();
 

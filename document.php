@@ -50,7 +50,6 @@ if ($post && file_exists($filePath)) {
   <link rel="stylesheet" href="fonts/icomoon/style.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/styles.css">
 
   <style>
   .content-area pre {
