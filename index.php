@@ -213,7 +213,7 @@
               <div class="p-4">
                 <h3 class="h5">Laravel 6.x to 11 Upgrade</h3>
                 <p class="text-muted small">Stuck on Laravel 6.x? It’s time to embrace the future. This step-by-step guide helps you migrate through multiple major versions—tackling deprecated features, config changes, authentication upgrades, and Blade optimizations. Learn how to go from legacy to modern Laravel without breaking your app.</p>
-                <a href="blog.php?post=blog_6_11" class="btn btn-sm btn-outline-primary mt-2">Read More</a>
+                <a href="blog.php?post=blog_6_11" target="_blank" class="btn btn-sm btn-outline-primary mt-2">Read More</a>
               </div>
             </div>
           </div>
@@ -223,7 +223,7 @@
               <div class="p-4">
                 <h3 class="h5">Laravel 7.x to 11 Upgrade</h3>
                 <p class="text-muted small">Laravel 7.x introduced powerful features—but Laravel 11 takes productivity to another level. Discover how to upgrade seamlessly with guidance on handling route closures, exception handlers, validation changes, and introducing native types to modernize your codebase.</p>
-                <a href="blog.php?post=blog_7_11" class="btn btn-sm btn-outline-primary mt-2">Read More</a>
+                <a href="blog.php?post=blog_7_11" target="_blank" class="btn btn-sm btn-outline-primary mt-2">Read More</a>
               </div>
             </div>
           </div>
@@ -233,7 +233,7 @@
               <div class="p-4">
                 <h3 class="h5">Laravel 8.x to 11 Upgrade</h3>
                 <p class="text-muted small">Laravel 8 is great—but Laravel 11 is faster, leaner, and cleaner. This article walks through the major differences in routing, factories, job queues, and improved testing tools. Ideal for developers who want to modernize without completely refactoring their projects.</p>
-                <a href="blog.php?post=blog_8_11" class="btn btn-sm btn-outline-primary mt-2">Read More</a>
+                <a href="blog.php?post=blog_8_11" target="_blank" class="btn btn-sm btn-outline-primary mt-2">Read More</a>
               </div>
             </div>
           </div>
@@ -243,7 +243,7 @@
               <div class="p-4">
                 <h3 class="h5">Laravel 9.x to 11 Upgrade</h3>
                 <p class="text-muted small">Laravel 11 removes the need for boilerplate. If you're on 9.xx, this guide shows you how to transition to a lighter, faster, more expressive Laravel. Includes tips for converting custom service providers, refactoring middleware, and updating your composer.json cleanly.</p>
-                <a href="blog.php?post=blog_9_11" class="btn btn-sm btn-outline-primary mt-2">Read More</a>
+                <a href="blog.php?post=blog_9_11" target="_blank" class="btn btn-sm btn-outline-primary mt-2">Read More</a>
               </div>
             </div>
           </div>
@@ -253,7 +253,7 @@
               <div class="p-4">
                 <h3 class="h5">Laravel 10.x to 11 Upgrade</h3>
                 <p class="text-muted small">Laravel 11 refines what Laravel 10 started—minimal app structure, better performance, and Laravel Reverb integration. This article shows how to upgrade with zero friction, improve test coverage, and take advantage of simplified service containers.</p>
-                <a href="blog.php?post=blog_10_11" class="btn btn-sm btn-outline-primary mt-2">Read More</a>
+                <a href="blog.php?post=blog_10_11" target="_blank" class="btn btn-sm btn-outline-primary mt-2">Read More</a>
               </div>
             </div>
           </div>

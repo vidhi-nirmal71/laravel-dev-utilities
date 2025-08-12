@@ -49,6 +49,7 @@ if ($post && file_exists($filePath)) {
   <link href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700,900" rel="stylesheet">
   <link rel="stylesheet" href="fonts/icomoon/style.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/jquery-ui.css">
   <link rel="stylesheet" href="css/owl.carousel.min.css">
   <link rel="stylesheet" href="css/owl.theme.default.min.css">
@@ -56,7 +57,6 @@ if ($post && file_exists($filePath)) {
   <link rel="stylesheet" href="css/bootstrap-datepicker.css">
   <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
   <link rel="stylesheet" href="css/aos.css">
-  <link rel="stylesheet" href="css/style.css">
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-81RELLJ2Y5"></script>
   <script>
@@ -132,11 +132,13 @@ if ($post && file_exists($filePath)) {
       </div>
     </div>
 
+    <?php $docVersion = $post; ?>
     <section class="site-section" id="blog-content">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-10">
             <article class="content-area">
+              <?php include 'email_form.php'; ?>
               <?php echo $content; ?>
             </article>
           </div>

@@ -1,4 +1,4 @@
-<footer class="site-footer bg-primary text-white py-3">
+<footer class="site-footer bg-primary text-white py-3" style="background-color: #193b68 !important;">
     <div class="container">
     <div class="row text-center">
         <div class="col-md-12">

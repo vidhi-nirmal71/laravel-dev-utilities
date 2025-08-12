@@ -2005,6 +2005,9 @@ h1, h2, h3, h4, h5,
   background-color: #193b68 !important;
 }
 
+a {
+  color: #193b68 !important;
+}
 .rounded-2 {
   border-radius: 0.5rem;
 }
