@@ -1,7 +1,13 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
+use Dotenv\Dotenv;
+
+$dotenv = Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
 header('Content-Type: application/json');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -52,14 +58,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     try {
         $mail->isSMTP();
-        $mail->Host = "sandbox.smtp.mailtrap.io";
+        $mail->Host = $_ENV['SMTP_HOST'];
         $mail->SMTPAuth = true;
-        $mail->Username = "8229822150dd58";
-        $mail->Password = "03691ae4c95162";
+        $mail->Username = $_ENV['SMTP_USERNAME'];
+        $mail->Password = $_ENV['SMTP_PASSWORD'];
         $mail->SMTPSecure = "tls";
-        $mail->Port = 587;
+        $mail->Port = $_ENV['SMTP_PORT'];
 
-        $mail->setFrom("no-reply@yourdomain.com", "Laravel App");
+        $mail->setFrom($_ENV['SMTP_FROM_EMAIL'], $_ENV['SMTP_FROM_NAME']);
         $mail->addAddress($email);
         $mail->Subject = $emailTitle;
         $mail->isHTML(true);
